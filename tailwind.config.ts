@@ -8,10 +8,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-jetbrains-mono)', 'monospace'], // Default font
+        jetbrains: ['var(--font-jetbrains-mono)', 'monospace'], // Specific class
+        righteous: ['var(--font-righteous)', 'cursive'], // Specific class
+      },
+      animation: {
+        'scrolling-text': 'scroll-text 20s linear infinite',
+      },
+      keyframes: {
+        'scroll-text': {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'mask-image': 'linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%)',
       },
     },
   },

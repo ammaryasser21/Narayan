@@ -1,8 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import { JetBrains_Mono, Righteous } from 'next/font/google';
+
+// Configure the fonts
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
+});
+
+const righteous = Righteous({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-righteous',
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +30,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${jetBrainsMono.variable} ${righteous.variable} bg-[#0f0f0f] text-white grid place-items-center`}>
+        <Navbar/>
+        <div className="container w-[1200px] pt-[5rem]">{children}</div>
+        <Footer/>
+        </body>
     </html>
   );
 }
