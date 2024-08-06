@@ -9,17 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-jetbrains-mono)', 'monospace'], // Default font
-        jetbrains: ['var(--font-jetbrains-mono)', 'monospace'], // Specific class
-        righteous: ['var(--font-righteous)', 'cursive'], // Specific class
+        sans: ['var(--font-jetbrains-mono)', 'monospace'],
+        jetbrains: ['var(--font-jetbrains-mono)', 'monospace'],
+        righteous: ['var(--font-righteous)', 'cursive'],
       },
       animation: {
         'scrolling-text': 'scroll-text 20s linear infinite',
+        'reverse': 'scroll-text-reverse 20s linear infinite reverse'
       },
       keyframes: {
         'scroll-text': {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(-100%)' },
+
+          'to': { transform: 'translateX(-100%)' },
+        },
+        'scroll-text-reverse': {
+
+          'to': { transform: 'translateX(-100%)' },
         },
       },
       backgroundImage: {

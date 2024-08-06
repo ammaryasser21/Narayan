@@ -14,5 +14,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+.home section:nth-child(2),.home section:nth-child(3){
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%);
+}
+
 
 
