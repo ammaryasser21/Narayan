@@ -5,7 +5,7 @@ import Special from "./Special";
 import {workItems,WorkItem}  from "../Components/WorkItems"; 
 import arrowIcon from "../public/assets/arrow-icon.png"
 
-const Card: React.FC<WorkItem> = ({ title, description, image }) => (
+const Card: React.FC<WorkItem> = ({ title, description, image ,tag}) => (
   <Special
     width="w-[calc(100%-2rem)] sm:w-[calc(50%-1rem)]"
     hover="hover:translate-y-[-5px] transition-all cursor-pointer"
@@ -17,7 +17,7 @@ const Card: React.FC<WorkItem> = ({ title, description, image }) => (
             {title[0]}
           </h2>
           <p className="text-[14px] sm:text-[16px] md:text-[16px] text-[#808080]">
-            {description[0]}
+            {tag[0]}
           </p>
         </div>
         <div className="more">
