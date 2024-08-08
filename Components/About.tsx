@@ -10,14 +10,10 @@ const About: React.FC = () => {
   return (
     <div>
       <Info
-        secondaryTitle=""
-        mainTitle=""
         title="About."
         subTitle="I’m a designer from Ireland 🇮🇪 with a passion for pixels."
         description="When I'm not designing, I'm out exploring nature, hiking, scuba diving, and surfing. Whether trekking through forests, diving into the depths of the ocean, or riding waves, I find joy and inspiration in outdoor adventures."
-        subDescription=""
         auto={false}
-        smallText=""
       />
       <section className="flex justify-center gap-[24px] pt-[48px] pb-[145px]">
         <Image

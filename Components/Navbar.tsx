@@ -4,6 +4,34 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
+const navLinks = [
+  { href: "/Work", label: "Work" },
+  { href: "/About", label: "About" },
+  { href: "/Contact", label: "Contact" },
+];
+
+const NavLink: React.FC<{ href: string; label: string; isActive: boolean }> = ({
+  href,
+  label,
+  isActive,
+}) => (
+  <li>
+    <Link
+      href={href}
+      className="relative hover:transition-all hover:duration-500 transition-all duration-500 font-[500] text-[15px]"
+    >
+      /
+      <span
+        className={`${
+          isActive ? "text-[#C7C7C7]" : "text-white"
+        } transition-colors hover:text-[#C7C7C7]`}
+      >
+        {label}
+      </span>
+    </Link>
+  </li>
+);
+
 const Navbar: React.FC = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,54 +65,14 @@ const Navbar: React.FC = () => {
               menuOpen ? "flex-col gap-6" : "flex-row"
             } lg:flex-row `}
           >
-            <li>
-              <Link
-                href="/Work"
-                className={` relative hover:transition-all hover:duration-500  transition-all duration-500
-                   font-[500] text-[15px]`}
-              >
-                /
-                <span
-                  className={` ${
-                    pathname === "/Work" ? "text-[#C7C7C7]" : "text-white"
-                  } transition-colors hover:text-[#C7C7C7]`}
-                >
-                  Work
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/About"
-                className={`relative hover:transition-all hover:duration-500  transition-all duration-500
-                   font-[500] text-[15px]`}
-              >
-                /
-                <span
-                  className={` ${
-                    pathname === "/About" ? "text-[#C7C7C7]" : "text-white"
-                  } transition-colors hover:text-[#C7C7C7]`}
-                >
-                  About
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/Contact"
-                className={` relative hover:transition-all hover:duration-500  transition-all duration-500"
-                   font-[500] text-[15px]`}
-              >
-                /
-                <span
-                  className={` ${
-                    pathname === "/Contact" ? "text-[#C7C7C7]" : "text-white"
-                  } transition-colors hover:text-[#C7C7C7]`}
-                >
-                  Contact
-                </span>
-              </Link>
-            </li>
+            {navLinks.map(({ href, label }) => (
+              <NavLink
+                key={href}
+                href={href}
+                label={label}
+                isActive={pathname === href}
+              />
+            ))}
           </ul>
         </div>
         <button

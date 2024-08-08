@@ -25,15 +25,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
       <div className="grid place-items-center">
         <div className="max-w-[600px] text-center">
           {" "}
-          <Info
-            secondaryTitle=""
-            mainTitle=""
-            title={item.title[0]}
-            description=""
-            subTitle="" smallText=""
-            subDescription=""
-            auto={false}
-          />
+          <Info title={item.title[0]} auto={false} />
         </div>
         <div className="flex gap-4 items-center justify-center  py-[80px]">
           <Special
@@ -89,12 +81,8 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
         <div className="max-w-[600px]  py-[80px]">
           {" "}
           <Info
-            secondaryTitle=""
             mainTitle={item.title[1]}
-            title=""
             description={item.description[1]}
-            subTitle="" smallText=""
-            subDescription=""
             auto={false}
           />
         </div>
@@ -108,32 +96,20 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
         <div className="max-w-[600px]  py-[80px]">
           {" "}
           <Info
-            secondaryTitle=""
             mainTitle={item.title[2]}
-            title=""
             description={item.description[2]}
-            subTitle="" smallText=""
-            subDescription=""
             auto={false}
           />
           {!item.title[5] ? (
             <Info
-              secondaryTitle=""
               mainTitle={item.title[3]}
-              title=""
               description={item.description[2]}
-              subTitle="" smallText=""
-              subDescription=""
               auto={false}
             />
           ) : (
             <Info
-              secondaryTitle=""
               mainTitle={item.title[4]}
-              title=""
               description={item.description[3]}
-              subTitle="" smallText=""
-              subDescription=""
               auto={false}
             />
           )}
@@ -149,22 +125,14 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
           {" "}
           {item.title[5] ? (
             <Info
-              secondaryTitle=""
               mainTitle={item.title[5]}
-              title=""
               description={item.description[4]}
-              subTitle="" smallText=""
-              subDescription=""
               auto={false}
             />
           ) : (
             <Info
-              secondaryTitle=""
               mainTitle={item.title[4]}
-              title=""
               description={item.description[3]}
-              subTitle="" smallText=""
-              subDescription=""
               auto={false}
             />
           )}

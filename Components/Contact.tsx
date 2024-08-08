@@ -1,18 +1,15 @@
 import React from "react";
+import Info from "./Info";
 
 const Contact = () => {
   return (
     <section className="w-[100%] grid place-content-center">
       <div className="pt-[calc(255px - 128px)] pb-[160px] flex flex-col gap-[16px] max-w-[600px] w-[100%]  flex-auto">
-        <h1 className="text-[60px] pb-[32px] font-righteous sm:w-[588px] leading-[66px]">
-          Contact.
-        </h1>
-        <p className="font-jetbrains text-[1rem] text-[#919191] leading-[24px] sm:w-[575px]">
-          Get in touch if you would like to work together.
-        </p>
-        <p className="font-jetbrains text-[1rem] text-[#919191] leading-[24px] sm:w-[575px]">
-          Thanks for stopping by. 🤘
-        </p>
+        <Info
+          title="Contact."
+          description="Get in touch if you would like to work together."
+          subDescription="Thanks for stopping by. 🤘"
+        />
         <form className="w-full flex flex-col gap-4 font-jetbrains pt-[36px]">
           <div className="flex gap-[16px]">
             <input

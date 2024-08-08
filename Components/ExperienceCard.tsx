@@ -26,7 +26,9 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           {period}
         </p>
       </div>
-      <p className="text-[18px] leading-[32px] font-jetbrains w-[252px] font-bold">{title}</p>
+      <p className="text-[18px] leading-[32px] font-jetbrains w-[252px] font-bold">
+        {title}
+      </p>
       <p className="text-[#808080] text-[18px] leading-[32px] font-jetbrains  pl-[269px]">
         {company}
       </p>
