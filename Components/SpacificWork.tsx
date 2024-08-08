@@ -30,8 +30,9 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
             mainTitle=""
             title={item.title[0]}
             description=""
-            subTitle=""
+            subTitle="" smallText=""
             subDescription=""
+            auto={false}
           />
         </div>
         <div className="flex gap-4 items-center justify-center  py-[80px]">
@@ -92,8 +93,9 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
             mainTitle={item.title[1]}
             title=""
             description={item.description[1]}
-            subTitle=""
+            subTitle="" smallText=""
             subDescription=""
+            auto={false}
           />
         </div>
         <Image
@@ -110,8 +112,9 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
             mainTitle={item.title[2]}
             title=""
             description={item.description[2]}
-            subTitle=""
+            subTitle="" smallText=""
             subDescription=""
+            auto={false}
           />
           {!item.title[5] ? (
             <Info
@@ -119,8 +122,9 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
               mainTitle={item.title[3]}
               title=""
               description={item.description[2]}
-              subTitle=""
+              subTitle="" smallText=""
               subDescription=""
+              auto={false}
             />
           ) : (
             <Info
@@ -128,8 +132,9 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
               mainTitle={item.title[4]}
               title=""
               description={item.description[3]}
-              subTitle=""
+              subTitle="" smallText=""
               subDescription=""
+              auto={false}
             />
           )}
         </div>
@@ -148,8 +153,9 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
               mainTitle={item.title[5]}
               title=""
               description={item.description[4]}
-              subTitle=""
+              subTitle="" smallText=""
               subDescription=""
+              auto={false}
             />
           ) : (
             <Info
@@ -157,8 +163,9 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
               mainTitle={item.title[4]}
               title=""
               description={item.description[3]}
-              subTitle=""
+              subTitle="" smallText=""
               subDescription=""
+              auto={false}
             />
           )}
         </div>

@@ -6,6 +6,8 @@ interface Info {
   description: string;
   subDescription: string;
   secondaryTitle: string;
+  auto:boolean;
+  smallText:string;
 }
 const Info: React.FC<Info> = ({
   title,
@@ -14,6 +16,8 @@ const Info: React.FC<Info> = ({
   subDescription,
   mainTitle,
   secondaryTitle,
+  auto,
+  smallText
 }) => {
   return (
     <div className="flex flex-col gap-4">
@@ -33,25 +37,30 @@ const Info: React.FC<Info> = ({
       )}
 
       {mainTitle && (
-        <h1 className="text-[28px] font-righteous leading-[66px]">
+        <h1 className={`${smallText ? "text-[20px]" : "text-[28px]"} ${smallText ? "leading-[32px]" : "leading-[66px]"} ${smallText ? "font-jetbrains" : "font-righteous"}  `}>
           {mainTitle}
         </h1>
       )}
 
       {subTitle && (
-        <p className="font-jetbrains text-[32px] text-white leading-[40px] sm:w-[561px]">
+        <p className={`font-jetbrains text-[32px] text-white leading-[40px] ${!auto && "sm:w-[561px]"}`}>
           {subTitle}
         </p>
       )}
       {description && (
-        <p className="font-jetbrains text-[1rem] text-[#919191] leading-[28px] sm:w-[575px]">
+        <p className={`font-jetbrains text-[1rem] text-[#919191] leading-[28px] ${auto ? "sm:w-auto" : "sm:w-[561px]"}`}>
           {description}
         </p>
       )}
 
       {subDescription && (
-        <p className="font-jetbrains text-[1rem] text-[#919191] leading-[28px] sm:w-[575px]">
+        <p className={`font-jetbrains text-[1rem] text-[#919191] leading-[28px]  ${auto ? "sm:w-auto" : "sm:w-[561px]"}`}>
           {subDescription}
+        </p>
+      )}
+      {smallText && (
+        <p className={`font-jetbrains text-[14px] text-[#616161] leading-[28px]  ${auto ? "sm:w-auto" : "sm:w-[561px]"}`}>
+          {smallText}
         </p>
       )}
     </div>

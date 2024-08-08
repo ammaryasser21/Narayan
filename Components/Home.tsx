@@ -110,6 +110,8 @@ const Home: React.FC = () => {
           excel at transforming concepts into tangible realities by seamlessly
           integrating aesthetics with practical functionality."
           subDescription=""
+          auto={false}
+          smallText=""
         />
       </section>
       <InfiniteScroll items={items} direction="left" speed="fast" />
