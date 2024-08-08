@@ -12,8 +12,16 @@ const Navbar: React.FC = () => {
     <nav className="grid place-items-center relative top-0 w-full z-50 py-[48px] transition-colors duration-300 bg-transparent font-jetbrains">
       <div className="container w-[1200px] flex flex-row justify-between items-center">
         <div className="navBrand flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-4 font-[100] text-lg font-righteous ">
-            <Image src="/assets/nav-icon.png" alt="icon" width={32} height={32}/>
+          <Link
+            href="/"
+            className="flex items-center gap-4 font-[100] text-lg font-righteous "
+          >
+            <Image
+              src="/assets/nav-icon.png"
+              alt="icon"
+              width={32}
+              height={32}
+            />
             <h1 className="text-[18px]">Narayan</h1>
           </Link>
         </div>
@@ -32,28 +40,49 @@ const Navbar: React.FC = () => {
             <li>
               <Link
                 href="/Work"
-                className={` relative transition-colors duration-300
+                className={` relative hover:transition-all hover:duration-500  transition-all duration-500
                    font-[500] text-[15px]`}
               >
-                /<span className={` ${pathname === "/Work" ? "text-[#C7C7C7]" : "text-white"} transition-colors hover:text-[#C7C7C7]`}>Work</span> 
+                /
+                <span
+                  className={` ${
+                    pathname === "/Work" ? "text-[#C7C7C7]" : "text-white"
+                  } transition-colors hover:text-[#C7C7C7]`}
+                >
+                  Work
+                </span>
               </Link>
             </li>
             <li>
               <Link
                 href="/About"
-                className={`relative transition-colors duration-300
+                className={`relative hover:transition-all hover:duration-500  transition-all duration-500
                    font-[500] text-[15px]`}
               >
-                /<span className={` ${pathname === "/About" ? "text-[#C7C7C7]" : "text-white"} transition-colors hover:text-[#C7C7C7]`}>About</span>
+                /
+                <span
+                  className={` ${
+                    pathname === "/About" ? "text-[#C7C7C7]" : "text-white"
+                  } transition-colors hover:text-[#C7C7C7]`}
+                >
+                  About
+                </span>
               </Link>
             </li>
             <li>
               <Link
                 href="/Contact"
-                className={` relative transition-colors duration-300
+                className={` relative hover:transition-all hover:duration-500  transition-all duration-500"
                    font-[500] text-[15px]`}
               >
-                /<span className={` ${pathname === "/Contact" ? "text-[#C7C7C7]" : "text-white"} transition-colors hover:text-[#C7C7C7]`}>Contact</span> 
+                /
+                <span
+                  className={` ${
+                    pathname === "/Contact" ? "text-[#C7C7C7]" : "text-white"
+                  } transition-colors hover:text-[#C7C7C7]`}
+                >
+                  Contact
+                </span>
               </Link>
             </li>
           </ul>

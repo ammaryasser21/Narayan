@@ -26,6 +26,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
         <div className="max-w-[600px] text-center">
           {" "}
           <Info
+            secondaryTitle=""
             mainTitle=""
             title={item.title[0]}
             description=""
@@ -33,9 +34,9 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
             subDescription=""
           />
         </div>
-        <div className="flex gap-4 items-center justify-center  pb-[80px]">
+        <div className="flex gap-4 items-center justify-center  py-[80px]">
           <Special
-            width="w-[fit-content] flex gap-4 items-center justify-center py-[8px] px-[20px]"
+            style="w-[fit-content] flex gap-[14px] items-center justify-center py-[4px] px-[22px]"
             hover="cursor-pointer"
           >
             <Image
@@ -49,7 +50,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
             </p>
           </Special>
           <Special
-            width="w-[fit-content] flex gap-4 items-center justify-center py-[8px] px-[20px]"
+            style="w-[fit-content] flex gap-[14px] items-center justify-center py-[4px] px-[22px]"
             hover="cursor-pointer"
           >
             <Image
@@ -63,7 +64,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
             </p>
           </Special>
           <Special
-            width="w-[fit-content] flex gap-4 items-center justify-center  py-[8px] px-[20px]"
+            style="w-[fit-content] flex gap-[14px] items-center justify-center py-[4px] px-[22px]"
             hover="cursor-pointer"
           >
             <Image
@@ -87,6 +88,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
         <div className="max-w-[600px]  py-[80px]">
           {" "}
           <Info
+            secondaryTitle=""
             mainTitle={item.title[1]}
             title=""
             description={item.description[1]}
@@ -104,6 +106,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
         <div className="max-w-[600px]  py-[80px]">
           {" "}
           <Info
+            secondaryTitle=""
             mainTitle={item.title[2]}
             title=""
             description={item.description[2]}
@@ -112,6 +115,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
           />
           {!item.title[5] ? (
             <Info
+              secondaryTitle=""
               mainTitle={item.title[3]}
               title=""
               description={item.description[2]}
@@ -120,6 +124,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
             />
           ) : (
             <Info
+              secondaryTitle=""
               mainTitle={item.title[4]}
               title=""
               description={item.description[3]}
@@ -139,6 +144,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
           {" "}
           {item.title[5] ? (
             <Info
+              secondaryTitle=""
               mainTitle={item.title[5]}
               title=""
               description={item.description[4]}
@@ -147,6 +153,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
             />
           ) : (
             <Info
+              secondaryTitle=""
               mainTitle={item.title[4]}
               title=""
               description={item.description[3]}
@@ -156,7 +163,11 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
           )}
         </div>
 
-        <Link href="/Work" className="text-[44px] font-righteous pb-[120px]"><p className="hover:transition-all hover:duration-500 hover:text-gray-300">View All Work</p></Link>
+        <Link href="/Work" className="text-[44px] font-righteous pb-[120px]">
+          <p className="hover:transition-all hover:duration-500 transition-all duration-500 hover:text-gray-300 text-white">
+            View All Work
+          </p>
+        </Link>
       </div>
     );
   };

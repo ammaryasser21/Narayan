@@ -2,15 +2,15 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Special from "./Special";
-import {workItems,WorkItem}  from "../Components/WorkItems"; 
-import arrowIcon from "../public/assets/arrow-icon.png"
+import { workItems, WorkItem } from "../Components/WorkItems";
+import arrowIcon from "../public/assets/arrow-icon.png";
 
-const Card: React.FC<WorkItem> = ({ title, description, image ,tag}) => (
+const Card: React.FC<WorkItem> = ({ title, description, image, tag }) => (
   <Special
-    width="w-[calc(100%-2rem)] sm:w-[calc(50%-1rem)]"
-    hover="hover:translate-y-[-5px] transition-all cursor-pointer"
+    style="w-[calc(100%-2rem)] sm:w-[calc(50%-1rem)]"
+    hover="hover:translate-y-[-5px] hover:transition-all transition-all cursor-pointer translate-y-0"
   >
-    <Link href={`/Work/${title[0]}`} className="card p-4 group">
+    <Link href={`/Work/${title[0]}`} className="card p-4 group m-0">
       <div className="info flex items-center justify-between py-4 px-[1rem]">
         <div className="content flex flex-col gap-1 font-jetbrains">
           <h2 className="text-[16px] sm:text-[18px] md:text-[20px] font-bold">
@@ -35,7 +35,7 @@ const Card: React.FC<WorkItem> = ({ title, description, image ,tag}) => (
         alt={`${title[0]} Project`}
         width={556}
         height={368}
-        className="w-full h-auto object-cover px-[1rem]"
+        className="w-auto object-cover p-[1rem] rounded-[30px]"
       />
     </Link>
   </Special>
