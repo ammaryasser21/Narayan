@@ -32,11 +32,12 @@ const testimonials: Testimonial[] = [
 ];
 
 const Testimonial: React.FC = () => {
+  
   const testimonialRef = useIntersectionObserver("testimonial");
 
   const renderTestimonials = () =>
     testimonials.map(({ text, name, position, image }) => (
-      <Special key={name} style="w-[100%]" hover="">
+      <Special key={name} style="xl:w-[100%]">
         <div className="card flex flex-col gap-8 flex-[1 0 0] flex-shrink-0 flex-grow-1 pt-[29.3px] pl-[24px] pr-[34px] pb-[24px]">
           <span>
             <svg
@@ -79,7 +80,7 @@ const Testimonial: React.FC = () => {
   return (
     <section ref={testimonialRef} className="testimonial py-[160px] fade-up">
       <h1 className="text-[28px] font-righteous pb-[29px]">Testimonials</h1>
-      <div className="cards flex flex-row gap-6 flex-[0 0 auto]">
+      <div className="cards flex flex-row xl:flex-nowrap flex-wrap gap-6">
         {renderTestimonials()}
       </div>
     </section>

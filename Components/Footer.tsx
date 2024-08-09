@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import Image, { StaticImageData } from "next/image";
 import arrowIcon from "../public/assets/arrow-icon.png";
 import twitterIcon from "../public/assets/twitter.png";
@@ -11,28 +11,29 @@ import { useIntersectionObserver } from "./useIntersectionObserver";
 
 const SocialIcon = ({ src, alt }: { src: StaticImageData; alt: string }) => (
   <Special
-    style="flex items-center justify-center size-[129px]"
-    hover="hover:translate-y-[-5px] transition-all cursor-pointer hover:duration-200 transition-all duration-200"
+    style="flex items-center justify-center xl:size-[129px] cursor-pointer transition-all duration-200  w-full xl:h-auto h-[115px]"
+    hover="hover:translate-y-[-5px]  hover:duration-200"
   >
     <Image src={src} alt={alt} width={32} height={32} />
   </Special>
 );
 
 const Footer = () => {
+  
   const mainRef = useIntersectionObserver("mainFooter");
   const authorRef = useIntersectionObserver("authorFooter");
-  
+
   return (
     <footer className="w-full grid place-items-center text-white font-jetbrains py-[40px]">
       <div
         ref={mainRef}
-        className="mainFooter w-[1200px] flex flex-col gap-[29px] fade-up"
+        className="mainFooter container xl:w-[1200px] flex flex-col gap-[29px] fade-up"
       >
         <h1 className="text-[28px] font-righteous">LET&apos;S WORK TOGETHER</h1>
-        <div className="w-full flex flex-row gap-[16px] items-stretch">
+        <div className="w-full flex flex-row flex-wrap gap-[16px] items-stretch">
           <Special
-            style="w-[588px] px-[22px] py-[10px] flex justify-between p-5 group items-center"
-            hover="hover:translate-y-[-5px] hover:transition-all cursor-pointer hover:duration-200 transition-all duration-200"
+            style="xl:w-[588px] w-full px-[22px] h-[115px] py-[10px] flex justify-between p-5 group items-center cursor-pointer transition-all duration-200"
+            hover="hover:translate-y-[-5px] hover:transition-all  hover:duration-200 "
           >
             <div className="content flex flex-col gap-[12px]">
               <p className="text-[#616161] text-[16px] font-jetbrains">
@@ -55,7 +56,7 @@ const Footer = () => {
         </div>
         <div
           ref={authorRef}
-          className="authorFooter pt-[160px] flex justify-between fade-up"
+          className="authorFooter pt-[160px] flex xl:justify-between xl:flex-row flex-col items-center  gap-4 fade-up"
         >
           <p className="text-[#999999] text-[13px] font-jetbrains">
             © Patrick Wilson 2024.

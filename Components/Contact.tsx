@@ -1,15 +1,18 @@
-"use client"
+"use client";
 import React from "react";
 import Info from "./Info";
 import { useIntersectionObserver } from "./useIntersectionObserver";
 
 const Contact = () => {
+  
   const contactRef = useIntersectionObserver("contact-section");
 
   return (
     <section
-      ref={contactRef} className="w-[100%] grid place-content-center fade-up contact-section ">
-      <div className="pt-[calc(255px - 128px)] pb-[160px] flex flex-col gap-[16px] max-w-[600px] w-[100%]  flex-auto">
+      ref={contactRef}
+      className="w-[100%] grid place-content-center fade-up contact-section "
+    >
+      <div className="pt-[calc(255px - 128px)] pb-[160px] flex flex-col gap-[16px] xl:max-w-[600px] w-[100%]  flex-auto">
         <Info
           title="Contact."
           description="Get in touch if you would like to work together."

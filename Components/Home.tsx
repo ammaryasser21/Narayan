@@ -12,6 +12,7 @@ import { useIntersectionObserver } from "./useIntersectionObserver";
 const items = ["UI/UX", "PRODUCT DESIGN", "STRATEGY", "RESEARCH"];
 
 const Home: React.FC = () => {
+  
   const heroRef = useIntersectionObserver("hero-section");
   const workRef = useIntersectionObserver("work-section");
   const faqRef = useIntersectionObserver("faq-section");
@@ -22,10 +23,7 @@ const Home: React.FC = () => {
         ref={heroRef}
         className="hero-section pt-[calc(158px - 48px)] pb-[186px] fade-up"
       >
-        <Special
-          style="w-[fit-content]"
-          hover=""
-        >
+        <Special style="w-[fit-content]">
           <p className="font-jetbrains text-[14px] leading-[32px] px-[16px] font-medium before:content-[''] relative before:block before:absolute before:size-[10px] before:bg-[#7DAA69] before:rounded-full before:top-1/2 before:transform before:-translate-y-1/2">
             <span className="pl-[22px]">Available for hire</span>
           </p>
@@ -46,11 +44,11 @@ const Home: React.FC = () => {
       </section>
       <section ref={faqRef} className="py-20 fade-up">
         <h1 className="font-righteous text-[24px] font-medium py-6">FAQs</h1>
-        <Special style="w-[100%]" hover="cursor-pointer">
+        <Special style="w-[100%] cursor-pointer">
           <FAQList />
         </Special>
       </section>
-        <Testimonial />
+      <Testimonial />
     </div>
   );
 };

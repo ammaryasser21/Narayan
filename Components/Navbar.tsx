@@ -11,19 +11,22 @@ const navLinks = [
   { href: "/Contact", label: "Contact" },
 ];
 
-const NavLink: React.FC<{ href: string; label: string; isActive: boolean }> = ({
-  href,
-  label,
-  isActive,
-}) => (
-  <li>
+interface Navigation {
+  href: string;
+  label: string;
+  isActive: boolean;
+}
+
+
+const NavLink: React.FC<Navigation> = ({ href, label, isActive }) => (
+  <li className="fade-right">
     <Link
       href={href}
-      className="relative hover:transition-all hover:duration-500 transition-all duration-500 font-[500] text-[15px]"
+      className="leading-none relative hover:transition-all hover:duration-500 transition-all duration-500 font-[500] lg:text-[15px] text-[40px]"
     >
-      /
+      /{""}
       <span
-        className={`${
+        className={`leading-none ${
           isActive ? "text-[#C7C7C7]" : "text-white"
         } transition-colors hover:text-[#C7C7C7]`}
       >
@@ -39,12 +42,15 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav ref={navRef} className=" fade-up nav grid place-items-center relative top-0 w-full z-50 py-[48px] transition-colors duration-300 bg-transparent font-jetbrains">
-      <div className="container w-[1200px] flex flex-row justify-between items-center">
+    <nav
+      ref={navRef}
+      className="fade-up nav grid place-items-center relative top-0 w-full z-50 py-[48px] transition-colors duration-300 bg-transparent font-jetbrains"
+    >
+      <div className="container xl:w-[1200px] flex flex-row justify-between items-center">
         <div className="navBrand flex items-center gap-2">
           <Link
             href="/"
-            className="flex items-center gap-4 font-[100] text-lg font-righteous "
+            className="flex items-center gap-4 font-[100] text-lg font-righteous"
           >
             <Image
               src="/assets/nav-icon.png"
@@ -56,41 +62,89 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
         <div
-          className={`navLinks flex items-center justify-end lg:flex-row lg:h-auto lg:bg-transparent ${
+          className={`navLinks flex justify-end lg:flex-row lg:h-auto lg:bg-transparent ${
             menuOpen
-              ? "flex-col w-full h-auto justify-evenly text-center absolute top-16 left-0 right-0"
-              : "hidden lg:flex"
+              ? "flex-col container h-auto justify-evenly absolute top-20 bg-[#0f0f0f] p-[20px] pl-0 pt-8"
+              : "hidden lg:flex items-center"
           }`}
         >
           <ul
-            className={`flex gap-[20px] items-center justify-center ${
-              menuOpen ? "flex-col gap-6" : "flex-row"
-            } lg:flex-row `}
+            className={`flex ${
+              menuOpen
+                ? "flex-col items-start gap-1"
+                : "flex-row items-center gap-[20px]"
+            } lg:flex-row`}
           >
-            {navLinks.map(({ href, label }) => (
-              <NavLink
+            {navLinks.map(({ href, label }, index) => (
+              <li
                 key={href}
-                href={href}
-                label={label}
-                isActive={pathname === href}
-              />
+                className={`fade-right ${
+                  menuOpen ? `animation-delay-${index}` : ""
+                }`}
+              >
+                <NavLink
+                  href={href}
+                  label={label}
+                  isActive={pathname === href}
+                />
+              </li>
             ))}
+            {menuOpen && (
+              <ul className="w-full">
+                <li className="pt-8 xl:pt-0 xl:border-t-0 border-t w-[100%] xl:mt-0 mt-8 border-[#373737] fade-right animation-delay-3">
+                  <Link
+                    href=""
+                    className="relative hover:transition-all hover:duration-500 transition-all duration-500 font-[500] text-[15px]"
+                  >
+                    <span
+                      className={`"text-white" transition-colors hover:text-[#C7C7C7]`}
+                    >
+                      Twitter
+                    </span>
+                  </Link>
+                </li>
+                <li className=" fade-right animation-delay-4">
+                  <Link
+                    href=""
+                    className="relative hover:transition-all hover:duration-500 transition-all duration-500 font-[500] text-[15px]"
+                  >
+                    <span
+                      className={`"text-white" transition-colors hover:text-[#C7C7C7]`}
+                    >
+                      GitHub
+                    </span>
+                  </Link>
+                </li>
+                <li className=" fade-right animation-delay-5">
+                  <Link
+                    href=""
+                    className="relative hover:transition-all hover:duration-500 transition-all duration-500 font-[500] text-[15px]"
+                  >
+                    <span
+                      className={`"text-white" transition-colors hover:text-[#C7C7C7]`}
+                    >
+                      Instagram
+                    </span>
+                  </Link>
+                </li>
+              </ul>
+            )}
           </ul>
         </div>
         <button
-          className="burger flex flex-col justify-end items-end gap-3 lg:hidden"
+          className="burger flex flex-col justify-end items-end gap-2 lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen ? "true" : "false"}
           type="button"
         >
           <div
-            className={`w-6 h-0.5 bg-gray-500 transition-transform ${
+            className={`w-6 h-[3px] bg-gray-500 transition-transform ${
               menuOpen ? "rotate-45 translate-x-1.5 translate-y-1.5" : ""
             }`}
           ></div>
           <div
-            className={`w-6 h-0.5 bg-gray-500 transition-transform ${
+            className={`w-6 h-[3px] bg-gray-500 transition-transform ${
               menuOpen ? "-rotate-45 translate-x-1.5 -translate-y-1.5" : ""
             }`}
           ></div>

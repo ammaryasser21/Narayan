@@ -39,11 +39,13 @@ const faqs: FAQ[] = [
   },
 ];
 
-const FAQItem: React.FC<{ faq: FAQ; isOpen: boolean; toggle: () => void }> = ({
-  faq,
-  isOpen,
-  toggle,
-}) => (
+interface FAQItem {
+  faq: FAQ;
+  isOpen: boolean;
+  toggle: () => void;
+}
+
+const FAQItem: React.FC<FAQItem> = ({ faq, isOpen, toggle }) => (
   <div
     className={`${
       faq.id === "faq5" ? "border-0 border-b-0 pb-0" : "border-b-2"

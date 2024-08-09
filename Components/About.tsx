@@ -32,21 +32,21 @@ const About: React.FC = () => {
         ref={addToRefs1}
       >
         <Image
-          className="rounded-[32px]"
+          className="rounded-[32px] w-[32%] "
           src="/assets/about-page1.avif"
           alt=""
           width={384}
           height={384}
         />
         <Image
-          className="rounded-[32px]"
+          className="rounded-[32px] w-[32%] "
           src="/assets/about-page2.avif"
           alt=""
           width={384}
           height={384}
         />
         <Image
-          className="rounded-[32px]"
+          className="rounded-[32px] w-[32%] "
           src="/assets/about-page3.avif"
           alt=""
           width={384}
@@ -55,7 +55,7 @@ const About: React.FC = () => {
       </section>
       <section className="about-section2 fade-up" ref={addToRefs2}>
         <h1 className="text-[28px] font-righteous pb-[29px]">MY APPROACH</h1>
-        <div className="cards flex flex-row gap-6 flex-[0 0 auto]">
+        <div className="cards flex flex-row flex-wrap xl:flex-nowrap gap-6 flex-[0 0 auto]">
           <ApproachCard
             imageSrc="/assets/user-icon.png"
             mainTitle="User centred"

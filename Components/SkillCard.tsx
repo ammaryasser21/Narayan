@@ -15,7 +15,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
   imgWidth,
   imgHeight,
 }) => (
-  <Special style="flex items-center gap-6 p-[26px] w-[384px]" hover="">
+  <Special style="flex items-center gap-6 p-[26px] xl:w-[384px] w-full">
     <div className="w-[32px] h-[32px]">
       <Image
         src={imageSrc}

@@ -17,8 +17,8 @@ export const useIntersectionObserver = (className: string) => {
 
     const currentRef = ref.current;
 
-    if (currentRef) {
-      observer.observe(currentRef);
+    if (ref.current) {
+      observer.observe(ref.current);
     }
 
     return () => {

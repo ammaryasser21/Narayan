@@ -8,10 +8,11 @@ import Link from "next/link";
 import { useIntersectionObserver } from "./useIntersectionObserver";
 
 interface SpacificWorkProps {
-  title?: string;
+  title: string;
 }
 
 const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
+  
   const TitleRef = useIntersectionObserver("spacific-work1");
   const badgeRef = useIntersectionObserver("spacific-work2");
   const imageRef1 = useIntersectionObserver("spacific-work3");
@@ -31,13 +32,16 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
 
     return (
       <div className="grid place-items-center">
-        <section ref={TitleRef} className="spacific-work1 max-w-[600px] text-center  fade-up">
+        <section
+          ref={TitleRef}
+          className="spacific-work1 xl:max-w-[600px] text-center  fade-up"
+        >
           {" "}
           <Info title={item.title[0]} auto={false} />
         </section>
         <section
           ref={badgeRef}
-          className="fade-up spacific-work2 flex gap-4 items-center justify-center  py-[80px]"
+          className="fade-up spacific-work2 flex xl:flex-row flex-col gap-4 items-center justify-center  py-[80px]"
         >
           <Special
             style="w-[fit-content] flex gap-[14px] items-center justify-center py-[4px] px-[22px]"
@@ -92,7 +96,10 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
           />
         </section>
 
-        <section ref={subtitleRef1} className="max-w-[600px]  py-[80px] fade-up spacific-work4 ">
+        <section
+          ref={subtitleRef1}
+          className="max-w-[600px]  py-[80px] fade-up spacific-work4 "
+        >
           {" "}
           <Info
             mainTitle={item.title[1]}
@@ -110,7 +117,10 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
           />
         </section>
 
-        <section ref={subtitleRef2} className="max-w-[600px]  py-[80px] fade-up spacific-work6 ">
+        <section
+          ref={subtitleRef2}
+          className="max-w-[600px]  py-[80px] fade-up spacific-work6 "
+        >
           {" "}
           <Info
             mainTitle={item.title[2]}
@@ -141,7 +151,10 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
           />
         </section>
 
-        <section ref={subtitleRef3} className="max-w-[600px]  py-[80px] fade-up spacific-work8 ">
+        <section
+          ref={subtitleRef3}
+          className="max-w-[600px]  py-[80px] fade-up spacific-work8 "
+        >
           {" "}
           {item.title[5] ? (
             <Info

@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="en" className="schema-dark">
       <body className={`${jetBrainsMono.variable} ${righteous.variable} bg-[#0f0f0f] text-white grid place-items-center`}>
         <Navbar/>
-        <div className="container max-w-[1200px] pt-[5rem]">{children}</div>
+        <div className="container xl:max-w-[1200px] pt-[5rem]">{children}</div>
         <Footer/>
         </body>
     </html>

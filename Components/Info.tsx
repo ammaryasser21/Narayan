@@ -31,7 +31,7 @@ const Info: React.FC<Info> = ({
             </h1>
           )}
           {secondaryTitle && (
-            <h1 className="w-1/2 text-[60px] font-righteous leading-[66px]">
+            <h1 className="sm:w-1/2 text-[60px] font-righteous leading-[66px]">
               {secondaryTitle}
             </h1>
           )}

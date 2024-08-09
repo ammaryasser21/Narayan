@@ -2,8 +2,8 @@ import React, { ReactNode } from "react";
 
 interface SpecialProps {
   children: ReactNode;
-  style: string;
-  hover: string;
+  style?: string;
+  hover?: string;
 }
 
 const Special: React.FC<SpecialProps> = ({ children, style, hover }) => {
