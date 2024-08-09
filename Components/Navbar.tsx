@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
+import { useIntersectionObserver } from "./useIntersectionObserver";
 
 const navLinks = [
   { href: "/Work", label: "Work" },
@@ -33,11 +34,12 @@ const NavLink: React.FC<{ href: string; label: string; isActive: boolean }> = ({
 );
 
 const Navbar: React.FC = () => {
+  const navRef = useIntersectionObserver("nav");
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="grid place-items-center relative top-0 w-full z-50 py-[48px] transition-colors duration-300 bg-transparent font-jetbrains">
+    <nav ref={navRef} className=" fade-up nav grid place-items-center relative top-0 w-full z-50 py-[48px] transition-colors duration-300 bg-transparent font-jetbrains">
       <div className="container w-[1200px] flex flex-row justify-between items-center">
         <div className="navBrand flex items-center gap-2">
           <Link

@@ -5,13 +5,21 @@ import Image from "next/image";
 import Info from "./Info";
 import Special from "./Special";
 import Link from "next/link";
+import { useIntersectionObserver } from "./useIntersectionObserver";
 
 interface SpacificWorkProps {
   title?: string;
 }
 
 const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
-  console.log(title);
+  const TitleRef = useIntersectionObserver("spacific-work1");
+  const badgeRef = useIntersectionObserver("spacific-work2");
+  const imageRef1 = useIntersectionObserver("spacific-work3");
+  const imageRef2 = useIntersectionObserver("spacific-work4");
+  const imageRef3 = useIntersectionObserver("spacific-work5");
+  const subtitleRef1 = useIntersectionObserver("spacific-work6");
+  const subtitleRef2 = useIntersectionObserver("spacific-work7");
+  const subtitleRef3 = useIntersectionObserver("spacific-work8");
   const [items] = useState<WorkItem[]>(workItems);
 
   const renderItem = () => {
@@ -23,11 +31,14 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
 
     return (
       <div className="grid place-items-center">
-        <div className="max-w-[600px] text-center">
+        <section ref={TitleRef} className="spacific-work1 max-w-[600px] text-center  fade-up">
           {" "}
           <Info title={item.title[0]} auto={false} />
-        </div>
-        <div className="flex gap-4 items-center justify-center  py-[80px]">
+        </section>
+        <section
+          ref={badgeRef}
+          className="fade-up spacific-work2 flex gap-4 items-center justify-center  py-[80px]"
+        >
           <Special
             style="w-[fit-content] flex gap-[14px] items-center justify-center py-[4px] px-[22px]"
             hover="cursor-pointer"
@@ -70,30 +81,36 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
               {item.tag[2]}
             </p>
           </Special>
-        </div>
-        <Image
-          src={item.image[0]}
-          alt={item.title[0] + "1"}
-          className="h-[revert-layer] rounded-[32px] "
-          width={1200}
-          height={784}
-        />
-        <div className="max-w-[600px]  py-[80px]">
+        </section>
+        <section ref={imageRef1} className="fade-up spacific-work3 ">
+          <Image
+            src={item.image[0]}
+            alt={item.title[0] + "1"}
+            className="h-[revert-layer] rounded-[32px] "
+            width={1200}
+            height={784}
+          />
+        </section>
+
+        <section ref={subtitleRef1} className="max-w-[600px]  py-[80px] fade-up spacific-work4 ">
           {" "}
           <Info
             mainTitle={item.title[1]}
             description={item.description[1]}
             auto={false}
           />
-        </div>
-        <Image
-          src={item.image[1]}
-          alt={item.title[0] + "2"}
-          className="h-[revert-layer]  rounded-[32px]"
-          width={1200}
-          height={784}
-        />
-        <div className="max-w-[600px]  py-[80px]">
+        </section>
+        <section ref={imageRef2} className="fade-up spacific-work5 ">
+          <Image
+            src={item.image[1]}
+            alt={item.title[0] + "2"}
+            className="h-[revert-layer]  rounded-[32px]"
+            width={1200}
+            height={784}
+          />
+        </section>
+
+        <section ref={subtitleRef2} className="max-w-[600px]  py-[80px] fade-up spacific-work6 ">
           {" "}
           <Info
             mainTitle={item.title[2]}
@@ -113,15 +130,18 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
               auto={false}
             />
           )}
-        </div>
-        <Image
-          src={item.image[2]}
-          alt={item.title[0] + "3"}
-          className="h-[revert-layer]  rounded-[32px] "
-          width={1200}
-          height={784}
-        />
-        <div className="max-w-[600px]  py-[80px]">
+        </section>
+        <section ref={imageRef3} className="fade-up spacific-work7 ">
+          <Image
+            src={item.image[2]}
+            alt={item.title[0] + "3"}
+            className="h-[revert-layer]  rounded-[32px] "
+            width={1200}
+            height={784}
+          />
+        </section>
+
+        <section ref={subtitleRef3} className="max-w-[600px]  py-[80px] fade-up spacific-work8 ">
           {" "}
           {item.title[5] ? (
             <Info
@@ -136,7 +156,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
               auto={false}
             />
           )}
-        </div>
+        </section>
 
         <Link href="/Work" className="text-[44px] font-righteous pb-[120px]">
           <p className="hover:transition-all hover:duration-500 transition-all duration-500 hover:text-gray-300 text-white">

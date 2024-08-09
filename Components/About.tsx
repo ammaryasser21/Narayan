@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Testimonial from "./Testimonial";
 import Info from "./Info";
@@ -5,17 +6,31 @@ import Image from "next/image";
 import ApproachCard from "./ApproachCard";
 import SkillCard from "./SkillCard";
 import ExperienceCard from "./ExperienceCard";
+import { useIntersectionObserver } from "./useIntersectionObserver";
 
 const About: React.FC = () => {
+  const infoRef = useIntersectionObserver("about-info");
+  const addToRefs1 = useIntersectionObserver("about-section1");
+  const addToRefs2 = useIntersectionObserver("about-section2");
+  const addToRefs3 = useIntersectionObserver("about-section3");
+  const addToRefs4 = useIntersectionObserver("about-section4");
+
   return (
     <div>
-      <Info
-        title="About."
-        subTitle="I’m a designer from Ireland 🇮🇪 with a passion for pixels."
-        description="When I'm not designing, I'm out exploring nature, hiking, scuba diving, and surfing. Whether trekking through forests, diving into the depths of the ocean, or riding waves, I find joy and inspiration in outdoor adventures."
-        auto={false}
-      />
-      <section className="flex justify-center gap-[24px] pt-[48px] pb-[145px]">
+      <section ref={infoRef} className="about-info fade-up">
+        {" "}
+        <Info
+          title="About."
+          subTitle="I’m a designer from Ireland 🇮🇪 with a passion for pixels."
+          description="When I'm not designing, I'm out exploring nature, hiking, scuba diving, and surfing. Whether trekking through forests, diving into the depths of the ocean, or riding waves, I find joy and inspiration in outdoor adventures."
+          auto={false}
+        />
+      </section>
+
+      <section
+        className="about-section1 flex justify-center gap-[24px] pt-[48px] pb-[145px] fade-up"
+        ref={addToRefs1}
+      >
         <Image
           className="rounded-[32px]"
           src="/assets/about-page1.avif"
@@ -38,7 +53,7 @@ const About: React.FC = () => {
           height={384}
         />
       </section>
-      <section className="">
+      <section className="about-section2 fade-up" ref={addToRefs2}>
         <h1 className="text-[28px] font-righteous pb-[29px]">MY APPROACH</h1>
         <div className="cards flex flex-row gap-6 flex-[0 0 auto]">
           <ApproachCard
@@ -71,7 +86,7 @@ const About: React.FC = () => {
           />
         </div>
       </section>
-      <section className="py-[160px]">
+      <section className="about-section3 py-[160px] fade-up" ref={addToRefs3}>
         <h1 className="text-[28px] font-righteous pb-[29px]">SKILLS</h1>
         <div className="cards flex flex-row gap-6 flex-[0 0 auto] flex-wrap">
           <SkillCard
@@ -112,7 +127,7 @@ const About: React.FC = () => {
           />
         </div>
       </section>
-      <section className="">
+      <section className="about-section4 fade-up" ref={addToRefs4}>
         <h1 className="text-[28px] font-righteous pb-[29px]">Experience</h1>
         <div className="cards flex flex-row gap-6 flex-wrap">
           <ExperienceCard

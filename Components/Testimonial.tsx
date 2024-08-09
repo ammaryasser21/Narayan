@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Special from "./Special";
+import { useIntersectionObserver } from "./useIntersectionObserver";
 
 interface Testimonial {
   text: string;
@@ -31,6 +32,8 @@ const testimonials: Testimonial[] = [
 ];
 
 const Testimonial: React.FC = () => {
+  const testimonialRef = useIntersectionObserver("testimonial");
+
   const renderTestimonials = () =>
     testimonials.map(({ text, name, position, image }) => (
       <Special key={name} style="w-[100%]" hover="">
@@ -74,7 +77,7 @@ const Testimonial: React.FC = () => {
     ));
 
   return (
-    <section className="testimonial py-[160px]">
+    <section ref={testimonialRef} className="testimonial py-[160px] fade-up">
       <h1 className="text-[28px] font-righteous pb-[29px]">Testimonials</h1>
       <div className="cards flex flex-row gap-6 flex-[0 0 auto]">
         {renderTestimonials()}

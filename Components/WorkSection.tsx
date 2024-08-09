@@ -1,9 +1,11 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Special from "./Special";
 import { workItems, WorkItem } from "../Components/WorkItems";
 import arrowIcon from "../public/assets/arrow-icon.png";
+import { useIntersectionObserver } from "./useIntersectionObserver";
 
 const Card: React.FC<WorkItem> = ({ title, description, image, tag }) => (
   <Special
@@ -42,8 +44,9 @@ const Card: React.FC<WorkItem> = ({ title, description, image, tag }) => (
 );
 
 const WorkSection: React.FC = () => {
+  const worksRef = useIntersectionObserver("work-images");
   return (
-    <section className="work py-8 pt-[176px]">
+    <section ref={worksRef} className="work-images py-8 pt-[176px]  fade-up">
       <h1 className="text-[28px] font-righteous pb-[27px]">RECENT WORK</h1>
       <div className="cards flex flex-wrap gap-4">
         {workItems.map((item) => (

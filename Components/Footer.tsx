@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useRef, useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
 import arrowIcon from "../public/assets/arrow-icon.png";
 import twitterIcon from "../public/assets/twitter.png";
@@ -6,6 +7,7 @@ import behanceIcon from "../public/assets/behance.png";
 import dribbbleIcon from "../public/assets/dribbble.png";
 import instagramIcon from "../public/assets/instagram.png";
 import Special from "./Special";
+import { useIntersectionObserver } from "./useIntersectionObserver";
 
 const SocialIcon = ({ src, alt }: { src: StaticImageData; alt: string }) => (
   <Special
@@ -17,9 +19,15 @@ const SocialIcon = ({ src, alt }: { src: StaticImageData; alt: string }) => (
 );
 
 const Footer = () => {
+  const mainRef = useIntersectionObserver("mainFooter");
+  const authorRef = useIntersectionObserver("authorFooter");
+  
   return (
     <footer className="w-full grid place-items-center text-white font-jetbrains py-[40px]">
-      <div className="w-[1200px] flex flex-col gap-[29px]">
+      <div
+        ref={mainRef}
+        className="mainFooter w-[1200px] flex flex-col gap-[29px] fade-up"
+      >
         <h1 className="text-[28px] font-righteous">LET&apos;S WORK TOGETHER</h1>
         <div className="w-full flex flex-row gap-[16px] items-stretch">
           <Special
@@ -45,7 +53,10 @@ const Footer = () => {
           <SocialIcon src={dribbbleIcon} alt="Dribbble icon" />
           <SocialIcon src={behanceIcon} alt="Behance icon" />
         </div>
-        <div className="author pt-[160px] flex justify-between">
+        <div
+          ref={authorRef}
+          className="authorFooter pt-[160px] flex justify-between fade-up"
+        >
           <p className="text-[#999999] text-[13px] font-jetbrains">
             © Patrick Wilson 2024.
           </p>
