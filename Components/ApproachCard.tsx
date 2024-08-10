@@ -23,7 +23,7 @@ const ApproachCard: React.FC<ApproachCardProps> = ({
       <div className="w-[40px] h-[40px]">
         <Image src={imageSrc} alt="" width={imgWidth} height={imgHeight} />
       </div>
-      <Info mainTitle={mainTitle} auto={true} smallText={description} />
+      <Info mainTitle={mainTitle} auto={true} smallText={description} className="gap-[8px]" />
     </div>
   </Special>
 );

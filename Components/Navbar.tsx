@@ -19,7 +19,7 @@ interface Navigation {
 
 
 const NavLink: React.FC<Navigation> = ({ href, label, isActive }) => (
-  <li className="fade-right">
+
     <Link
       href={href}
       className="leading-none relative hover:transition-all hover:duration-500 transition-all duration-500 font-[500] lg:text-[15px] text-[40px]"
@@ -33,7 +33,6 @@ const NavLink: React.FC<Navigation> = ({ href, label, isActive }) => (
         {label}
       </span>
     </Link>
-  </li>
 );
 
 const Navbar: React.FC = () => {

@@ -1,8 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import Special from "./Special";
-import { useIntersectionObserver } from "./useIntersectionObserver";
-
 interface Testimonial {
   text: string;
   name: string;
@@ -32,13 +30,10 @@ const testimonials: Testimonial[] = [
 ];
 
 const Testimonial: React.FC = () => {
-  
-  const testimonialRef = useIntersectionObserver("testimonial");
-
   const renderTestimonials = () =>
     testimonials.map(({ text, name, position, image }) => (
       <Special key={name} style="xl:w-[100%]">
-        <div className="card flex flex-col gap-8 flex-[1 0 0] flex-shrink-0 flex-grow-1 pt-[29.3px] pl-[24px] pr-[34px] pb-[24px]">
+        <div className="card flex flex-col flex-[1 0 0] flex-shrink-0 flex-grow-1 pt-[29.3px] pl-[24px] pr-[34px] pb-[24px]">
           <span>
             <svg
               width="29"
@@ -53,7 +48,7 @@ const Testimonial: React.FC = () => {
               />
             </svg>
           </span>
-          <p className="font-jetbrains text-[14px] leading-[24px] pb-[48px]">
+          <p className="font-jetbrains text-[14px] leading-[24px] pb-[48px] pt-[23.93px]">
             {text}
           </p>
           <div className="person flex align-middle gap-[16px]">
@@ -66,7 +61,7 @@ const Testimonial: React.FC = () => {
                 height={48}
               />
             </div>
-            <div className="content">
+            <div className="content flex flex-col gap-[4px]">
               <p className="text-[16px] font-jetbrains font-bold">{name}</p>
               <p className="text-[14px] font-jetbrains font-normal text-[#808080]">
                 {position}
@@ -78,12 +73,12 @@ const Testimonial: React.FC = () => {
     ));
 
   return (
-    <section ref={testimonialRef} className="testimonial py-[160px] fade-up">
-      <h1 className="text-[28px] font-righteous pb-[29px]">Testimonials</h1>
+    <>
+      <h1 className="text-[28px] font-righteous pb-[29px]">TESTEMONIAL</h1>
       <div className="cards flex flex-row xl:flex-nowrap flex-wrap gap-6">
         {renderTestimonials()}
       </div>
-    </section>
+    </>
   );
 };
 

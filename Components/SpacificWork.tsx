@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { workItems, WorkItem } from "../Components/WorkItems";
+import { workItems, WorkItem } from "./WorkItems";
 import Image from "next/image";
 import Info from "./Info";
 import Special from "./Special";
@@ -119,7 +119,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
 
         <section
           ref={subtitleRef2}
-          className="max-w-[600px]  py-[80px] fade-up spacific-work6 "
+          className="max-w-[600px]  py-[80px] fade-up spacific-work6 flex flex-col gap-[48px] "
         >
           {" "}
           <Info

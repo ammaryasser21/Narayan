@@ -12,11 +12,12 @@ const Contact = () => {
       ref={contactRef}
       className="w-[100%] grid place-content-center fade-up contact-section "
     >
-      <div className="pt-[calc(255px - 128px)] pb-[160px] flex flex-col gap-[16px] xl:max-w-[600px] w-[100%]  flex-auto">
+      <div className="pt-[calc(255px - 128px)] pb-[120px] flex flex-col xl:max-w-[600px] w-[100%]  flex-auto">
         <Info
           title="Contact."
           description="Get in touch if you would like to work together."
           subDescription="Thanks for stopping by. 🤘"
+          className="gap-[32px]"
         />
         <form className="w-full flex flex-col gap-4 font-jetbrains pt-[36px]">
           <div className="flex gap-[16px]">

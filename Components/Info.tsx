@@ -9,6 +9,7 @@ interface Info {
   secondaryTitle?: string;
   auto?: boolean;
   smallText?: string;
+  className?:string;
 }
 
 const Info: React.FC<Info> = ({
@@ -20,9 +21,10 @@ const Info: React.FC<Info> = ({
   secondaryTitle,
   auto,
   smallText,
+  className
 }) => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className={`flex flex-col ${className}`}>
       {(title || secondaryTitle) && (
         <div className="pt-[24px]">
           {title && (
@@ -31,7 +33,7 @@ const Info: React.FC<Info> = ({
             </h1>
           )}
           {secondaryTitle && (
-            <h1 className="sm:w-1/2 text-[60px] font-righteous leading-[66px]">
+            <h1 className="sm:w-1/2 text-[60px] font-righteous leading-[66px] pb-[32px]">
               {secondaryTitle}
             </h1>
           )}

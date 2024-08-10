@@ -32,7 +32,7 @@ const Footer = () => {
         <h1 className="text-[28px] font-righteous">LET&apos;S WORK TOGETHER</h1>
         <div className="w-full flex flex-row flex-wrap gap-[16px] items-stretch">
           <Special
-            style="xl:w-[588px] w-full px-[22px] h-[115px] py-[10px] flex justify-between p-5 group items-center cursor-pointer transition-all duration-200"
+            style="xl:w-[588px] w-full px-[22px] h-[129px] py-[10px] flex justify-between p-5 group items-center cursor-pointer transition-all duration-200"
             hover="hover:translate-y-[-5px] hover:transition-all  hover:duration-200 "
           >
             <div className="content flex flex-col gap-[12px]">
@@ -56,7 +56,7 @@ const Footer = () => {
         </div>
         <div
           ref={authorRef}
-          className="authorFooter pt-[160px] flex xl:justify-between xl:flex-row flex-col items-center  gap-4 fade-up"
+          className="authorFooter pt-[131px] flex xl:justify-between xl:flex-row flex-col items-center  gap-4 fade-up"
         >
           <p className="text-[#999999] text-[13px] font-jetbrains">
             © Patrick Wilson 2024.

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Special from "./Special";
 
 interface FAQ {
   id: string;
@@ -86,7 +87,11 @@ const FAQList: React.FC = () => {
   };
 
   return (
+    <>
+    <h1 className="font-righteous text-[24px] font-medium py-6">FAQS</h1>
+    <Special style="w-[100%] cursor-pointer">
     <div className="faqs flex flex-col p-5">
+      
       {faqs.map((faq) => (
         <FAQItem
           key={faq.id}
@@ -95,7 +100,7 @@ const FAQList: React.FC = () => {
           toggle={() => toggle(faq.id)}
         />
       ))}
-    </div>
+    </div></Special></>
   );
 };
 
