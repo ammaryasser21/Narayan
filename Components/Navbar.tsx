@@ -22,7 +22,7 @@ const NavLink: React.FC<Navigation> = ({ href, label, isActive }) => (
 
     <Link
       href={href}
-      className="leading-none relative hover:transition-all hover:duration-500 transition-all duration-500 font-[500] lg:text-[15px] text-[40px]"
+      className="leading-none relative hover:transition-all hover:duration-500 transition-all duration-500 font-[300]  lg:text-[15px] text-[40px]"
     >
       /{""}
       <span
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
       ref={navRef}
       className="fade-up nav grid place-items-center relative top-0 w-full z-50 py-[48px] transition-colors duration-300 bg-transparent font-jetbrains"
     >
-      <div className="container xl:w-[1200px] flex flex-row justify-between items-center">
+      <div className="container px-[10px] sm:p-0 xl:max-w-[1200px] flex flex-row justify-between items-center">
         <div className="navBrand flex items-center gap-2">
           <Link
             href="/"
@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
             className={`flex ${
               menuOpen
                 ? "flex-col items-start gap-1"
-                : "flex-row items-center gap-[20px]"
+                : "flex-row items-center gap-[24px]"
             } lg:flex-row`}
           >
             {navLinks.map(({ href, label }, index) => (
@@ -131,7 +131,7 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
         <button
-          className="burger flex flex-col justify-end items-end gap-2 lg:hidden"
+          className={`burger flex flex-col justify-end items-end ${menuOpen ? "gap-0" : "gap-2"} lg:hidden`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen ? "true" : "false"}
@@ -139,12 +139,12 @@ const Navbar: React.FC = () => {
         >
           <div
             className={`w-6 h-[3px] bg-gray-500 transition-transform ${
-              menuOpen ? "rotate-45 translate-x-1.5 translate-y-1.5" : ""
+              menuOpen ? "rotate-45 translate-x-1.5" : ""
             }`}
           ></div>
           <div
             className={`w-6 h-[3px] bg-gray-500 transition-transform ${
-              menuOpen ? "-rotate-45 translate-x-1.5 -translate-y-1.5" : ""
+              menuOpen ? "-rotate-45 translate-x-1.5 -translate-y-[4px]" : ""
             }`}
           ></div>
         </button>

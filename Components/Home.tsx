@@ -39,6 +39,7 @@ const Home: React.FC = () => {
       </section>
       <InfiniteScroll items={items} direction="left" speed="fast" />
       <InfiniteScroll items={items} direction="right" speed="fast" />
+
       <section ref={workRef} className="work-section  pt-[120px] pb-[160px] fade-up">
         <WorkSection />
       </section>

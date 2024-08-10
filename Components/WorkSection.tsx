@@ -9,7 +9,8 @@ import { useIntersectionObserver } from "./useIntersectionObserver";
 
 const Card: React.FC<WorkItem> = ({ title, image, tag }) => (
   <Special
-    style="w-[calc(100%-2rem)] xl:w-[calc(50%-1rem)] p-[24px]"
+    style="w-auto
+     xl:w-[calc(50%-1rem)] p-[24px]"
     hover="hover:translate-y-[-5px] hover:transition-all transition-all cursor-pointer translate-y-0"
   >
     <Link href={`/Work/${title[0]}`} className=" group m-0">
