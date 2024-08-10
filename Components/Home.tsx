@@ -21,7 +21,7 @@ const Home: React.FC = () => {
     <div className="home">
       <section
         ref={heroRef}
-        className="hero-section pt-[calc(158px - 48px)] pb-[130px] fade-up"
+        className="hero-section pt-[110px] pb-[130px] fade-up"
       >
         <Special style="w-[fit-content]">
           <p className="font-jetbrains text-[14px] leading-[32px] px-[16px] font-medium before:content-[''] relative before:block before:absolute before:size-[10px] before:bg-[#7DAA69] before:rounded-full before:top-1/2 before:transform before:-translate-y-1/2">

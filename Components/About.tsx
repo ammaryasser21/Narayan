@@ -125,7 +125,7 @@ const About: React.FC = () => {
 
   return (
     <div>
-      <section ref={infoRef} className="about-info fade-up pb-[48px]">
+      <section ref={infoRef} className="about-info fade-up pb-[48px] pt-[127px]">
         <Info
           title="About."
           subTitle="I’m a designer from Ireland 🇮🇪 with a passion for pixels."

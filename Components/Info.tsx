@@ -24,7 +24,9 @@ const Info: React.FC<Info> = ({
   className
 }) => {
   return (
-    <div className={`flex flex-col ${className}`}>
+    <div className={`flex flex-col ${className} ${
+            !auto && "sm:w-[561px]"
+          } w-full`}>
       {(title || secondaryTitle) && (
         <div className="pt-[24px]">
           {title && (

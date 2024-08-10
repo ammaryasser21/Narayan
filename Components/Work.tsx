@@ -11,7 +11,7 @@ const Work = () => {
     <div className="pb-[160px]">
       <section
         ref={workRef}
-        className="work-section pt-[calc(255px - 128px)] flex flex-col gap-[16px]  fade-up pb-[160px]"
+        className="work-section pt-[127px] flex flex-col gap-[16px]  fade-up pb-[160px]"
       >
         <Info
           title="Work."
