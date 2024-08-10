@@ -156,19 +156,13 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
           className="max-w-[600px]  py-[80px] fade-up spacific-work8 "
         >
           {" "}
-          {item.title[5] ? (
+         
             <Info
               mainTitle={item.title[5]}
               description={item.description[4]}
               auto={false}
             />
-          ) : (
-            <Info
-              mainTitle={item.title[4]}
-              description={item.description[3]}
-              auto={false}
-            />
-          )}
+          
         </section>
 
         <Link href="/Work" className="text-[44px] font-righteous pb-[120px]">

@@ -48,6 +48,7 @@ export const workItems: WorkItem[] = [
     description: [
       "NovaTech Solutions was founded by a team of tech enthusiasts with a passion for innovation and problem-solving. The founders came from diverse backgrounds in engineering, software development, and business, and they united under the common goal of creating cutting-edge solutions to address modern challenges.",
       ...commonDescription,
+       "The redesigned platform achieved its goals successfully. User engagement increased by X%, and positive feedback highlighted the improved efficiency in completing transactions. The modern design not only aligned with industry expectations but also positioned them as a secure and user-friendly payments solution.",
     ],
     image: [
       "/assets/novatech1.png",
