@@ -34,7 +34,7 @@ const InfiniteScroll: React.FC<Scroll> = ({ items, direction, speed }) => {
   return (
     <section
       ref={scrollerRef}
-      className={`scroller overflow-hidden relative sm:w-full w-[100vw]`}
+      className={`scroller overflow-hidden relative sm:w-full w-[88vw]`}
       data-speed={speed}
       data-direction={direction}
     >

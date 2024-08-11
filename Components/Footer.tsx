@@ -27,7 +27,7 @@ const Footer = () => {
     <footer className="w-full grid place-items-center text-white font-jetbrains py-[40px]">
       <div
         ref={mainRef}
-        className="mainFooter container px-[10px] sm:p-0 xl:max-w-[1200px] flex flex-col gap-[29px] fade-up"
+        className="mainFooter container px-[24px] sm:p-0 xl:max-w-[1200px] flex flex-col gap-[29px] fade-up"
       >
         <h1 className="text-[28px] font-righteous">LET&apos;S WORK TOGETHER</h1>
         <div className="w-full flex flex-row flex-wrap gap-[16px] items-stretch">

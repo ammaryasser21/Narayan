@@ -28,7 +28,7 @@ const Contact = () => {
               placeholder="Name"
             />
             <input
-              className="bg-[#292929] p-4  w-1/2 rounded-[10px] text-[#767676] placeholder-[#767676] focus:outline-none focus:border-gray-600 focus:ring-0"
+              className="bg-[#292929] p-4  w-1/2  rounded-[10px] text-[#767676] placeholder-[#767676] focus:outline-none focus:border-gray-600 focus:ring-0"
               type="email"
               title="Email"
               placeholder="Email"

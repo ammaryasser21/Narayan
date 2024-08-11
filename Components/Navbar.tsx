@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useIntersectionObserver } from "./useIntersectionObserver";
 
 const navLinks = [
@@ -17,35 +17,53 @@ interface Navigation {
   isActive: boolean;
 }
 
-
 const NavLink: React.FC<Navigation> = ({ href, label, isActive }) => (
-
-    <Link
-      href={href}
-      className="leading-none relative hover:transition-all hover:duration-500 transition-all duration-500 font-[300]  lg:text-[15px] text-[40px]"
+  <Link
+    href={href}
+    className="leading-none relative hover:transition-all hover:duration-500 transition-all duration-500 font-[300] lg:text-[15px] text-[40px]"
+    
+  >
+    /{""}
+    <span
+      className={`leading-none ${
+        isActive ? "text-[#C7C7C7]" : "text-white"
+      } transition-colors hover:text-[#C7C7C7]`}
     >
-      /{""}
-      <span
-        className={`leading-none ${
-          isActive ? "text-[#C7C7C7]" : "text-white"
-        } transition-colors hover:text-[#C7C7C7]`}
-      >
-        {label}
-      </span>
-    </Link>
+      {label}
+    </span>
+  </Link>
 );
 
 const Navbar: React.FC = () => {
   const navRef = useIntersectionObserver("nav");
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
     <nav
       ref={navRef}
       className="fade-up nav grid place-items-center relative top-0 w-full z-50 py-[48px] transition-colors duration-300 bg-transparent font-jetbrains"
     >
-      <div className="container px-[10px] sm:p-0 xl:max-w-[1200px] flex flex-row justify-between items-center">
+      <div className="container px-[24px] sm:p-0 xl:max-w-[1200px] flex flex-row justify-between items-center">
         <div className="navBrand flex items-center gap-2">
           <Link
             href="/"
@@ -61,6 +79,7 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
         <div
+          ref={menuRef}
           className={`navLinks flex justify-end lg:flex-row lg:h-auto lg:bg-transparent ${
             menuOpen
               ? "flex-col container h-auto justify-evenly absolute top-20 bg-[#0f0f0f] p-[20px] pl-0 pt-8"
@@ -80,6 +99,7 @@ const Navbar: React.FC = () => {
                 className={`fade-right ${
                   menuOpen ? `animation-delay-${index}` : ""
                 }`}
+                onClick={() => setMenuOpen(false)}
               >
                 <NavLink
                   href={href}
@@ -94,6 +114,7 @@ const Navbar: React.FC = () => {
                   <Link
                     href=""
                     className="relative hover:transition-all hover:duration-500 transition-all duration-500 font-[500] text-[15px]"
+                    onClick={() => setMenuOpen(false)}
                   >
                     <span
                       className={`"text-white" transition-colors hover:text-[#C7C7C7]`}
@@ -106,6 +127,7 @@ const Navbar: React.FC = () => {
                   <Link
                     href=""
                     className="relative hover:transition-all hover:duration-500 transition-all duration-500 font-[500] text-[15px]"
+                    onClick={() => setMenuOpen(false)}
                   >
                     <span
                       className={`"text-white" transition-colors hover:text-[#C7C7C7]`}
@@ -118,6 +140,7 @@ const Navbar: React.FC = () => {
                   <Link
                     href=""
                     className="relative hover:transition-all hover:duration-500 transition-all duration-500 font-[500] text-[15px]"
+                    onClick={() => setMenuOpen(false)}
                   >
                     <span
                       className={`"text-white" transition-colors hover:text-[#C7C7C7]`}
@@ -131,8 +154,12 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
         <button
-          className={`burger flex flex-col justify-end items-end ${menuOpen ? "gap-0" : "gap-2"} lg:hidden`}
+          className={`burger flex flex-col justify-end items-end ${
+            menuOpen ? "gap-0" : "gap-2"
+          } lg:hidden`}
+
           onClick={() => setMenuOpen(!menuOpen)}
+
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen ? "true" : "false"}
           type="button"

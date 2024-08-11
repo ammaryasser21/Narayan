@@ -10,7 +10,7 @@ import { useIntersectionObserver } from "./useIntersectionObserver";
 
 const ImageCard: React.FC<{ src: string }> = ({ src }) => (
   <Image
-    className="rounded-[32px] w-[32%]"
+    className="rounded-[32px] w-[32%] "
     src={src}
     alt=""
     width={384}
@@ -125,7 +125,7 @@ const About: React.FC = () => {
 
   return (
     <div>
-      <section ref={infoRef} className="about-info fade-up pb-[48px] pt-[127px]">
+      <section ref={infoRef} className="about-info fade-up pb-[48px] sm:pt-[127px]">
         <Info
           title="About."
           subTitle="I’m a designer from Ireland 🇮🇪 with a passion for pixels."
@@ -136,7 +136,7 @@ const About: React.FC = () => {
       </section>
 
       <section
-        className="about-section1 flex justify-center gap-[24px] pt-[48px] pb-[145px] fade-up"
+        className="about-section1 flex  justify-center gap-[24px] pt-[48px] pb-[145px] fade-up px-6"
         ref={addToRefs1}
       >
         {[

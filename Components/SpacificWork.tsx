@@ -41,7 +41,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
         </section>
         <section
           ref={badgeRef}
-          className="fade-up spacific-work2 flex xl:flex-row flex-col gap-4 items-center justify-center  py-[80px]"
+          className="fade-up spacific-work2 flex xl:flex-row flex-col sm:gap-4 gap-[10px] items-center justify-center  sm:py-[80px] py-[40px]"
         >
           <Special
             style="w-[fit-content] flex gap-[14px] items-center justify-center py-[4px] px-[22px]"
@@ -90,7 +90,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
           <Image
             src={item.image[0]}
             alt={item.title[0] + "1"}
-            className="h-[revert-layer] rounded-[32px] "
+            className="sm:h-[revert-layer] rounded-[32px] "
             width={1200}
             height={784}
           />
@@ -111,7 +111,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
           <Image
             src={item.image[1]}
             alt={item.title[0] + "2"}
-            className="h-[revert-layer]  rounded-[32px]"
+            className="sm:h-[revert-layer]  rounded-[32px]"
             width={1200}
             height={784}
           />
@@ -145,7 +145,7 @@ const SpacificWork: React.FC<SpacificWorkProps> = ({ title }) => {
           <Image
             src={item.image[2]}
             alt={item.title[0] + "3"}
-            className="h-[revert-layer]  rounded-[32px] "
+            className="sm:h-[revert-layer]  rounded-[32px] "
             width={1200}
             height={784}
           />
