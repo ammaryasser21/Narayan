@@ -1,19 +1,5 @@
 import type { Metadata } from "next";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
 import "./globals.css";
-import { JetBrains_Mono, Righteous } from 'next/font/google';
-
-const jetBrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains-mono',
-});
-
-const righteous = Righteous({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-righteous',
-});
 
 
 export const metadata: Metadata = {
@@ -32,11 +18,7 @@ export default function RootLayout({
         <title>Narayan</title>
         <link rel="icon" href="/assets/nav-icon.png" />
       </head>
-      <body className={`${jetBrainsMono.variable} ${righteous.variable} bg-[#0f0f0f] text-white grid place-items-center`}>
-        <Navbar/>
-        <div className="container px-[24px] sm:p-0 xl:max-w-[1200px] pt-[5rem]">{children}</div>
-        <Footer/>
-        </body>
+      <body>{children}</body>
     </html>
   );
 }

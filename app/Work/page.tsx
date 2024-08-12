@@ -1,7 +1,9 @@
+import RootLayout from "@/Components/layouts/rootLayout";
 import Work from "@/Components/Work";
 
 export default function page() {
   return (
-    <Work/>
+    <RootLayout>
+    <Work/></RootLayout>
   );
 }

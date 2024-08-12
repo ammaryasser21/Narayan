@@ -1,7 +1,10 @@
 import About from "@/Components/About";
+import RootLayout from "@/Components/layouts/rootLayout";
 
 export default function page() {
   return (
-    <About/>
+    <RootLayout>
+      <About />
+    </RootLayout>
   );
 }

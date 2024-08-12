@@ -6,6 +6,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useIntersectionObserver } from "./useIntersectionObserver";
 
 const navLinks = [
+  { href: "/Blog", label: "Blog" },
   { href: "/Work", label: "Work" },
   { href: "/About", label: "About" },
   { href: "/Contact", label: "Contact" },
